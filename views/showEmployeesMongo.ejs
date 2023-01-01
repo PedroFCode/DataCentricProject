@@ -1,0 +1,29 @@
+<style>
+    th, td, table{
+        border: 1px solid black;
+    }
+</style>
+<h1>Employees - MongoDB</h1>
+<a href="http://localhost:3000/employeesMongoDB/add">Add Employee (MongoDB)</a>
+<br>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>phone</th>
+        <th>email</th>
+    </tr>
+    <% employees.forEach((employee)=> { %>
+        <tr>
+            <td>
+                <%= employee._id %>
+            </td>
+            <td>
+                <%= employee.phone %>
+            </td>
+            <td>
+                <%= employee.email %>
+            </td>
+        </tr>
+        <% }) %>
+</table>
+<a href="http://localhost:3000/">Back</a>

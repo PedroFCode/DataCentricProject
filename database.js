@@ -1,5 +1,8 @@
+//import
 const pmysql = require('promise-mysql');
 
+//Connection to mysql
+//Port had to be specified due to clash with other sql versions
 pmysql.createPool({
     connectionLimit: 3,
     host: "localhost",
@@ -16,6 +19,7 @@ pmysql.createPool({
         console.log("pool error: " + e)
     })
 
+//get function for employees
 module.exports = {
     getEmployees: function () {
         return new Promise((resolve, reject) => {
@@ -29,6 +33,7 @@ module.exports = {
         })
     },
 
+    //update function for employee chosen
     updateEmployee: function (eid, data) {
         return new Promise((resolve, reject) => {
             pool.query(`UPDATE employee SET
@@ -46,6 +51,7 @@ module.exports = {
 
     },
 
+    //get function for departments
     getDept: function () {
         return new Promise((resolve, reject) => {
             pool.query('SELECT * FROM dept')
@@ -58,6 +64,7 @@ module.exports = {
         })
     },
 
+    //delete function for the department chosen
     deleteDept: function (did) {
         return new Promise((resolve, reject) => {
             pool.query(`DELETE FROM dept WHERE did like(\"${did}\")`)
