@@ -1,0 +1,43 @@
+<form action="/employees/update/<%=employee.eid %>" method="post">
+    <h1 class="title">Update Employee</h1>
+
+    <div>
+        <label>- Employee Name must be at least 5 characters</label>
+        <br>
+        <label>- Role is either Manager or Employee</label>
+        <br>
+        <label>- Salary must be > 0</label>
+    </div>
+
+    <div class="form-input">
+        <label>EID:</label>
+        <input disabled value=<%=employee.eid %> />
+    </div>
+
+    <div class="form-input">
+        <label>Name:</label>
+        <input minlength="5" value=<%=employee.ename %> name="ename" />
+    </div>
+
+    <div class="form-input">
+        <label>Role:</label>
+        <select id="dropdown" name="role" >
+            <option value="Employee">Employee</option>
+            <option value="Manager">Manager</option>
+        </select>
+    </div>
+
+    <div class="form-input">
+        <label>Salary:</label>
+        <input min="1" value=<%=employee.salary %> name="salary" />
+    </div>
+
+    <div class="form-input">
+        <input type="submit" value="Update" />
+    </div>
+</form>
+<a href="http://localhost:3000/">Back</a>
+<script>
+    
+    
+</script>
